@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -14,8 +15,15 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Weather App</h1>
-
+    <div id="container">
+      <div id="header" class="jumbotron">
+        <h1>Weather App</h1>
+      </div>
+      <form id="searchCity" action="#">
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <input type="submit" value="Search">
+      </form>
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
