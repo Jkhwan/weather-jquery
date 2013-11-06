@@ -6,6 +6,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,12 +18,17 @@
   <body>
     <div id="container">
       <div id="header" class="jumbotron">
-        <h1>Weather App</h1>
+        <h1>Weather Forecast</h1>
       </div>
       <form id="searchCity" action="#">
         <input type="text" id="cityInput" placeholder="Enter city name">
         <input type="submit" value="Search">
       </form>
+      <ul id="citiesList" class="list-group">
+      </ul>
+      <div class="row weather">
+        
+      </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
