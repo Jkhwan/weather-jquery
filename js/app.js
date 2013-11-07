@@ -12,7 +12,7 @@ $(function() {
 		$('div.row.weather').hide();
 		$('ul#citiesList').show();
 
-		var url = "http://autocomplete.wunderground.com/aq?query=" + city + "&format=jsonp&cb=?";
+		var url = "http://autocomplete.wunderground.com/aq?query=" + city + "&cb=?";
 		var cityLookupSuccess = function(data) {
 			$.each(data.RESULTS, function(index, value) {
 				var li = $('<li class="list-group-item" data-zmw="' + value.zmw + '" data-city="' + value.name + '">' + value.name + '</li>').hide();
@@ -39,10 +39,23 @@ $(function() {
 		var key = '3c8121ac154d80de';
 		var cityWeatherURL = "http://api.wunderground.com/api/" + key + "/forecast/q/zmw:" + zmw +".json";
 		var cityWeatherSuccess = function(data) {
-			console.log(data);
 			$('ul#citiesList li').remove();
 			$('ul#citiesList').hide();
 			var weatherDiv = $('div.row.weather');
+			var condition = data.forecast.simpleforecast.forecastday[0].conditions;
+			if (condition.search("Rain") != -1) {
+				$('body').toggleClass('raining', true);
+				$('body').toggleClass('sunny', false);
+				$('body').toggleClass('cloudy', false);
+			} else if (condition.search("Cloudy") != -1) {
+				$('body').toggleClass('raining', false);
+				$('body').toggleClass('sunny', false);
+				$('body').toggleClass('cloudy', true);
+			} else if (condition.search("Clear") != -1) {
+				$('body').toggleClass('raining', false);
+				$('body').toggleClass('cloudy', false);
+				$('body').toggleClass('sunny', true);
+			}
 			for(var i = 0; i < 4; i++) {
 				var dailyDiv = $('<div class="dailyForecast col-xs-3"></div>');
 				var weatherData = data.forecast.simpleforecast.forecastday[i];
