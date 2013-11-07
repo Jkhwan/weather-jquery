@@ -33,6 +33,12 @@ $(function() {
 		return false;
 	});
 
+	$('ul#citiesList').on('mouseenter', 'li', function(evt) {
+		$(this).addClass("hovering");
+	}).on('mouseleave', 'li', function() {
+		$(this).removeClass("hovering");
+	});
+
 	$('ul#citiesList').on('click', 'li', function() {
 		var zmw = $(this).data("zmw");
 		var city = $(this).data('city');
