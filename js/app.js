@@ -1,6 +1,7 @@
 $(function() {
 	$('form#searchCity').submit(function() {
 
+		$('h1').addClass('top');
 		// grab city from input box
 		var cityInputBox = $('input#cityInput');
 		var city = cityInputBox.val();
