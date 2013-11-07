@@ -44,17 +44,13 @@ $(function() {
 			var weatherDiv = $('div.row.weather');
 			var condition = data.forecast.simpleforecast.forecastday[0].conditions;
 			if (condition.search("Rain") != -1) {
-				$('body').toggleClass('raining', true);
-				$('body').toggleClass('sunny', false);
-				$('body').toggleClass('cloudy', false);
+				$('body').toggleClass('raining', true).toggleClass('sunny', false).toggleClass('cloudy', false).toggleClass('snow', false);
 			} else if (condition.search("Cloudy") != -1) {
-				$('body').toggleClass('raining', false);
-				$('body').toggleClass('sunny', false);
-				$('body').toggleClass('cloudy', true);
+				$('body').toggleClass('cloudy', true).toggleClass('sunny', false).toggleClass('raining', false).toggleClass('snow', false);
 			} else if (condition.search("Clear") != -1) {
-				$('body').toggleClass('raining', false);
-				$('body').toggleClass('cloudy', false);
-				$('body').toggleClass('sunny', true);
+				$('body').toggleClass('sunny', true).toggleClass('cloudy', false).toggleClass('raining', false).toggleClass('snow', false);
+			} else if (condition.search("Snow") != -1) {
+				$('body').toggleClass('snow', true).toggleClass('sunny', false).toggleClass('cloudy', false).toggleClass('raining', false);
 			}
 			for(var i = 0; i < 4; i++) {
 				var dailyDiv = $('<div class="dailyForecast col-xs-3"></div>');
