@@ -1,0 +1,83 @@
+body {
+	background: url("../img/Stormy-Weather-Saguaro-Cactus.jpg") no-repeat center center fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	&.raining{
+		background: url("../img/raining.jpeg") no-repeat center center fixed;
+	}
+	&.cloudy{
+		background: url("../img/cloudy.jpg") no-repeat center center fixed;
+	}
+	&.sunny{
+		background: url("../img/sunny.jpg") no-repeat center center fixed;
+	}
+	&.snow{
+		background: url("../img/snowing.jpg") no-repeat center center fixed;
+	}
+	&.thunderstorm{
+		background: url("../img/thunderstorm.jpg") no-repeat center center fixed;
+	}
+}
+
+div#container {
+	margin: 0px auto;
+	h1 {
+		font-family: 'Julius Sans One', sans-serif;
+		font-weight: bold;
+		color: #ddd;
+		text-shadow: 3px 2px #222;
+		margin-top: 200px;
+		&.top {
+			margin-top: 20px;
+			-webkit-transition: all 1s;
+		}
+	}
+	.jumbotron {
+		padding-top: 18px;
+		padding-bottom: 18px;
+		margin-bottom: 0px;
+		background-color: inherit;
+	}
+	.weather.row {
+		background: rgba(255, 255, 255, 0.7);
+		display: none;
+		width: 80%;
+		margin: 40px auto 70px auto;
+		.dailyForecast {
+			font-weight: bold;
+			text-align: center;
+			padding: 30px 10px;
+			border: 1px solid #DDD;
+			span.temperature {
+				padding-left: 10px;
+			}
+			.simple {
+				font-weight: normal;
+			}
+		}
+	}
+	ul#citiesList {
+		width: 80%;
+		margin: 40px auto 70px auto;
+		list-style: none;
+		li {
+			border-radius: 0px;
+			font-weight: bold;
+			background: rgba(255, 255, 255, 0.7);
+			float: left;
+			width: 50%;
+			&.hovering {
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+#header {
+	text-align: center;
+}
+
+form#searchCity {
+	width: 250px;
+	margin: 0px auto;
+}
